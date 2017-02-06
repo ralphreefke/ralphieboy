@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ralphie boy</title>
+
+<meta charset="utf-8">
+
+<script src="jquery-3.1.1.min.js"></script>
+
+<script>
+
+	$( document ).ready(function() {
+		
+		$( "#contactbtn" ).click(function() {
+		
+			$( "#about" ).hide();
+			
+			if ($('#rb').css('opacity') == 0) {
+				$( "#rb" ).show();
+				$('#rb').css('opacity', 1); 
+				$( "#contact" ).hide();
+				$('#contact').css('opacity', 0);
+			}
+			else {
+				$('#rb').css('opacity', 0);
+				$( "#rb" ).hide();
+				$( "#contact" ).show();
+				$('#contact').css('opacity', .6);
+			}
+		  
+		});
+		
+		$( "#aboutbtn" ).click(function() {
+		
+			
+			// arguments should check for display then fade in
+		
+			$( "#contact" ).hide();
+			
+			if ($('#rb').css('opacity') == 0) {
+				$( "#rb" ).show();
+				$('#rb').css('opacity', 1); 
+				$( "#about" ).hide();
+				$('#about').css('opacity', 0);
+			}
+			else {
+				$('#rb').css('opacity', 0);
+				$( "#rb" ).hide();
+				$( "#about" ).show();
+				$('#about').css('opacity', .6);
+			}
+		  
+		});
+		
+	// end ready	
+	});
+
+</script>
+
+<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+
+<style>
+
+body { 
+	margin: 0; 
+	background: #000;
+	font-family: 'Special Elite', cursive;
+}
+
+img {
+	border: none;
+}
+
+video { 
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg') no-repeat; 
+	background-size: cover;  
+	-webkit-transition: 1s opacity; 
+	transition: 1s opacity; 
+}
+
+#box {
+	position: absolute;
+	width: 80%;
+	height: 200px;
+	z-index: 15;
+	top: 3%;
+	left: 22%;
+	margin: 0px 0 0 -150px;
+	text-align: center;
+}
+
+#rb {
+	font-size: 8em;
+	font-weight: 700;
+	letter-spacing: .06em;
+	color: #000;
+	
+	opacity: 1;
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+}
+
+#contact, #about {
+	font-size: 1em;
+	font-weight: 500;
+	letter-spacing: .06em;
+	color: #000;
+	margin-top: 80px;
+	text-align: left;
+	background-color: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=30);
+    border-radius: 25px;
+    
+	opacity: 0;
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+}
+
+#contact p, #about p {
+    padding: 2%;
+    font-weight: bold;
+    color: #FFF;
+    line-height: 20px; 
+}
+
+#contact  a {
+	color: #FFF;
+	text-decoration: underline;
+		
+}
+
+.icon {
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+
+
+/* 
+@media screen and (max-width: 500px) { 
+  div{width:70%;} 
+}
+
+@media all and (max-device-width: 800px) {
+  body { background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg") #000 no-repeat center center fixed; 
+  background-size: cover; 
+  }
+  #bgvid, #polina button { display: none; }
+  div{width:70%;} 
+}
+ */
+
+</style>
+
+<!-- 
+video code
+http://thenewcode.com/777/Create-Fullscreen-HTML5-Page-Background-Video
+<source src="2867047.webm" type="video/webm">
+-->
+
+</head>
+<body>
+
+	<video playsinline autoplay muted loop poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid">
+		
+		<source src="3183883.mp4" type="video/mp4">
+	</video> 
+
+	<div id="box">
+	
+		<div id="nav">
+			<a href="https://ralphieboy.bandcamp.com"><img src="btn-bandcamp.png" class="icon" /></a>
+			<a href="https://www.youtube.com/channel/UCH3AscgElcoa_IZpOtmkx4Q"><img src="btn-YT.png" class="icon" /></a>
+			<a href="https://ralphieboy.bandcamp.com"><img src="btn-FB.png" class="icon" /></a>
+			<a href="https://www.instagram.com/ralphieboymusic/"><img src="btn-intsagram.png" class="icon" /></a>
+			<img src="btn-contact.png" class="icon" id="contactbtn" />
+			<img src="btn-about.png" class="icon" id="aboutbtn" />
+		</div>
+		
+		<div style="clear:both"></div>
+		
+		<div id="words">
+			<h1 id="rb">ralphie boy</h1>
+			<div id="about" style="display: none">
+				<p>Ralphie Boy was born in Toronto and began listening to music on his mother's phonograph player.</p>
+			</div>
+			<div id="contact">
+				<div class="transbox">
+					<p>Howdy! You would probably be best keeping in touch on one those social media channels but if you want to get an email from me pop in your email and you'll be on the list. Getting an email from me is RARE but if you do it'll be about a new release or occasional gig that I play, or maybe I'll get drunk one night and ramble on about something or other. You can also <a href="mailto:howdy@ralphieboy.fyi">email me</a> if you would like.</p>   
+				</div>				
+			</div>
+		</div>
+		
+	</div>
+
+</body>
+</html>
